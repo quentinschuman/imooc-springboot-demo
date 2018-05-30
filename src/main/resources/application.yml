@@ -32,3 +32,12 @@ spring:
     expose-session-attributes: true
     request-context-attribute: request
     suffix: .ftl
+    #thymeleaf静态资源配置
+  thymeleaf:
+    prefix: classpath:/templates
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
