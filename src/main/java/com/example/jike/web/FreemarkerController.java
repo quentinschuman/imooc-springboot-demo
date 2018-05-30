@@ -48,12 +48,12 @@ public class FreemarkerController {
     @RequestMapping("/index")
     public String index(ModelMap map) {
         map.addAttribute("resource", resource);
-        return "freemarker/index";
+        return "/freemarker/index";
     }
 
     @RequestMapping("center")
     public String center() {
-        return "freemarker/center/center";
+        return "/freemarker/center/center";
     }
 
 }
