@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf test</title>
+</head>
+<body>
+<div>
+用户ID<input th:id="${user.id}" th:name="${user.id}" th:value="${user.id}">
+<br>
+用户名<input th:value="${user.username}">
+<br>
+密码<input th:value="${user.password}">
+<br>
+URL:<a th:href="@{https://www.baidu.com}">百度</a>
+<br>
+<form th:action="@{/th/postform}" th:object="${user}" method="post" th:method="post">
+    <input type="text" th:field="*{username}">
+    <input type="submit">
+</form>
+    <!--<div th:if="${user.id} == 10000">ID=10000</div>-->
+    <!--<div th:if="${user.id} gt 10000">ID>10000</div>-->
+    <!--<div th:if="${user.id} lt 10000">ID<10000</div>-->
+    <!--<div th:if="${user.id} ge 10000">ID>=10000</div>-->
+    <!--<div th:if="${user.id} le 10000">ID<=10000</div>-->
+<!--<select>-->
+        <!--<option>选择框</option>-->
+        <!--<option th:selected="${user.username eq 'imooc'}">imooc</option>-->
+        <!--<option th:selected="${user.username eq 'test'}">test</option>-->
+        <!--<option th:selected="${user.username eq 'admin'}">admin</option>-->
+<!--</select>-->
+    <table>
+        <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>密码</th>
+        </tr>
+        <tr th:each="person:${userList}">
+            <td th:text="${person.id}"></td>
+            <td th:text="${person.username}"></td>
+            <td th:text="${person.password}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
