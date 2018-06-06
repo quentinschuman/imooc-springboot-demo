@@ -41,3 +41,11 @@ spring:
     servlet:
       content-type: text/html
     cache: false
+#设定静态文件路径，js，css等
+  mvc:
+    static-path-pattern: /static/**
+#配置i18n资源文件，供thymeleaf读取
+  messages:
+    basename: i18n/messages
+    cache-duration: 3600
+    encoding: UTF-8
