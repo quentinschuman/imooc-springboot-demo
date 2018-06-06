@@ -34,28 +34,29 @@ public class ThymeleafController {
 
     @RequestMapping("test")
     public String test(ModelMap map){
-        User user = new User();
-        user.setId(10001);
-        user.setUsername("admin");
-        user.setPassword("123456");
-        map.addAttribute("user",user);
+        User user0 = new User();
+        user0.setId(10001);
+        user0.setUsername("admin");
+        user0.setPassword("123456");
+        map.addAttribute("user0",user0);
 
         User user1 = new User();
         user1.setId(9999);
         user1.setUsername("test");
         user1.setPassword("123456");
-        map.addAttribute("user",user);
+        map.addAttribute("user",user1);
 
         User user2 = new User();
         user1.setId(10000);
         user1.setUsername("imooc");
         user1.setPassword("123456");
-        map.addAttribute("user",user);
+        map.addAttribute("user",user2);
 
         List<User> userList = new ArrayList<>();
-        userList.add(user);
+        userList.add(user0);
         userList.add(user1);
         userList.add(user2);
+        map.addAttribute("userList",userList);
 
         return "/freemarker/thymeleaf/test";
     }
