@@ -5,7 +5,6 @@
     <title>thymeleaf test</title>
 </head>
 <body>
-<div>
 用户ID<input th:id="${user.id}" th:name="${user.id}" th:value="${user.id}">
 <br>
 用户名<input th:value="${user.username}">
@@ -41,6 +40,11 @@ URL:<a th:href="@{https://www.baidu.com}">百度</a>
             <td th:text="${person.password}"></td>
         </tr>
     </table>
+<div th:switch="${user0.username}">
+    <p th:case="'admin'">admin</p>
+    <p th:case="'#{roles.manager}'">普通管理员</p>
+    <p th:case="'#{roles.supermanager}'">超级管理员</p>
+    <p th:case="*">其他用户</p>
 </div>
 </body>
 </html>
